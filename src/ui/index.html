@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tiempos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- VISTA A: Dashboard (Menú Principal) -->
+    <div id="vista-dashboard" class="container">
+        <header class="header-dashboard">
+            <h1>Mis Rutinas</h1>
+            <button id="btn-nueva-lista" class="btn-primario">+ Crear Nueva Lista</button>
+        </header>
+
+        <div id="contenedor-rutinas" class="grid-rutinas">
+            <!-- Las tarjetas de las rutinas guardadas se inyectarán aquí con JavaScript -->
+        </div>
+    </div>
+
+    <!-- VISTA B: Editor de Lista (CRUD interno) -->
+    <div id="vista-editor" class="container" style="display: none;">
+        <input type="text" id="input-nombre-lista" class="input-titulo"
+            placeholder="Nombre de la Rutina (ej. Estudiar Inglés)">
+
+        <div class="formulario-actividad">
+            <input type="text" id="input-nombre-act" placeholder="Actividad (ej. Speaking)">
+            <input type="number" id="input-minutos-act" placeholder="Minutos" min="1">
+            <input type="number" id="input-segundos-act" placeholder="Seg" min="0" max="59">
+            <button id="btn-agregar-act" class="btn-secundario">Agregar</button>
+        </div>
+
+        <ul id="lista-actividades-dinamica" class="lista-limpia">
+            <!-- Las actividades de la lista en edición aparecerán aquí -->
+        </ul>
+
+        <div class="acciones-editor">
+            <button id="btn-cancelar-lista" class="btn-peligro">Cancelar</button>
+            <button id="btn-guardar-lista" class="btn-exito">Guardar Rutina</button>
+        </div>
+    </div>
+
+    <!-- VISTA C: Widget Temporizador (Ventana Pequeña) -->
+    <div id="vista-widget" class="container drag-area" style="display: none;">
+
+        <!-- Estado 1: Temporizador Activo -->
+        <div id="widget-progreso">
+            <h2 id="actividad-actual">Actividad</h2>
+            <div id="tiempo-restante">00:00</div>
+
+            <div class="controles no-drag">
+                <button id="btn-pausar" class="btn-pausa">Pausar</button>
+                <button id="btn-saltar" class="btn-info">Saltar</button>
+                <button id="btn-detener" class="btn-peligro">Detener</button>
+            </div>
+        </div>
+
+        <!-- Estado 2: Rutina Terminada -->
+        <div id="widget-terminado" style="display: none;">
+            <h2 class="texto-exito">¡Rutina Terminada!</h2>
+            <p>Has completado todos los bloques.</p>
+            <button id="btn-volver-menu" class="btn-primario no-drag">Volver al Menú Principal</button>
+        </div>
+
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+/* === VARIABLES Y GLOBALES === */
+:root {
+  --bg-color: #1e1e1e;
+  --card-bg: #2d2d2d;
+  --text-main: #ffffff;
+  --text-muted: #aaaaaa;
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --success: #198754;
+  --success-hover: #157347;
+  --danger: #dc3545;
+  --danger-hover: #c82333;
+  --secondary: #6c757d;
+  --secondary-hover: #5a6268;
+  --warning: #ffc107;
+  --warning-hover: #e0a800;
+  --info: #0dcaf0;
+  --info-hover: #0bacce;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* === BOTONES === */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: white;
+  -webkit-app-region: no-drag; /* CRUCIAL: Permite hacer clic en botones en modo widget */
+}
+
+.btn-primario {
+  background-color: var(--primary);
+}
+.btn-primario:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secundario {
+  background-color: var(--secondary);
+}
+.btn-secundario:hover {
+  background-color: var(--secondary-hover);
+}
+
+.btn-peligro {
+  background-color: var(--danger);
+}
+.btn-peligro:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn-exito {
+  background-color: var(--success);
+}
+.btn-exito:hover {
+  background-color: var(--success-hover);
+}
+.btn-pausa {
+  background-color: var(--warning);
+  color: #000;
+} /* Letra negra para contrastar con el amarillo */
+.btn-pausa:hover {
+  background-color: var(--warning-hover);
+}
+
+.btn-info {
+  background-color: var(--info);
+  color: #000;
+}
+.btn-info:hover {
+  background-color: var(--info-hover);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(
+    50%
+  ); /* Le quita un poco de color para que se vea inactivo */
+}
+
+/* === VISTA A: DASHBOARD === */
+.header-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.grid-rutinas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.tarjeta-rutina {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarjeta-rutina h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.tarjeta-rutina p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.tarjeta-acciones {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* === VISTA B: EDITOR === */
+input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px;
+  outline: none;
+  -webkit-app-region: no-drag; /* Permite escribir en los inputs */
+}
+input:focus {
+  border-color: var(--primary);
+}
+
+.input-titulo {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* Busca esta sección y reemplázala por esta: */
+.formulario-actividad {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.formulario-actividad input[type="text"] {
+  flex: 1;
+}
+/* Hacemos los campos numéricos un poco más pequeños */
+.formulario-actividad input[type="number"] {
+  width: 70px;
+}
+
+.lista-limpia {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.lista-limpia li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-bg);
+  margin-bottom: 8px;
+  padding: 12px 15px;
+  border-radius: 6px;
+}
+
+.acciones-editor {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+/* === VISTA C: WIDGET === */
+.drag-area {
+  -webkit-app-region: drag;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+#tiempo-restante {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 5px 0 15px 0;
+  color: var(--success);
+  font-variant-numeric: tabular-nums; /* Evita que el reloj parpadee o baile al cambiar de número */
+}
+
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.texto-exito {
+  color: var(--success);
+  margin-bottom: 5px;
+}
