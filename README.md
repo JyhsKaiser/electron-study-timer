@@ -1,4 +1,4 @@
-# ⏱️ [Nombre que elegiste]
+# ⏱️ temporizador de estudio
 
 Una aplicación de escritorio ligera y personalizable construida con **Electron**. Diseñada para funcionar como un widget _siempre visible_ (always-on-top) que te ayuda a gestionar bloques de tiempo y rutinas de estudio dinámicas.
 
@@ -13,19 +13,3 @@ Una aplicación de escritorio ligera y personalizable construida con **Electron*
 - **Temporizador Preciso:** Configuración de tiempos por minutos y segundos para cada actividad.
 - **Alertas Nativas:** Notificaciones visuales del sistema operativo y alertas sonoras al finalizar cada bloque.
 - **UX/UI Cuidada:** Diseño en modo oscuro con retroalimentación visual clara para botones de acción (Pausar, Saltar, Detener).
-
-## 📸 Capturas de Pantalla
-
-_(Agrega aquí capturas de tu app. Puedes tomar un screenshot del Dashboard y otro del Widget funcionando)._
-
-> `![Dashboard](./assets/screenshot1.png)`
-> `![Widget](./assets/screenshot2.png)`
-
-## 🚀 Instalación y Desarrollo Local
-
-Si deseas clonar y probar este proyecto en tu entorno local:
-
-1. Clona el repositorio:
-   ```bash
-   git clone [https://github.com/](https://github.com/)[TU-USUARIO]/[NOMBRE-DEL-REPO].git
-   ```
