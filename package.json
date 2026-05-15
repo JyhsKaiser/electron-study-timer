@@ -3,13 +3,30 @@
   "version": "1.0.0",
   "description": "Aplicación de temporizadores dinámicos",
   "main": "src/main.js",
+  "author": "Jovani",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.jovani.study-timer",
+    "productName": "Temporizador de Estudio",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^42.1.0"
+    "electron": "^42.1.0",
+    "electron-builder": "^26.8.1"
   }
 }
